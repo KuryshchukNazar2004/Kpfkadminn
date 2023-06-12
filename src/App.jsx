@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import Navbar from './components/Navbar'
+import db from './config/firebase'
 import './App.css'
+import { collection, onSnapshot } from '@firebase/firestore';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  useEffect(() =>{
+    onSnapshot(collection(db,'user'),(onSnapshot) =>{
+        console.log(onSnapshot.docs.map(doc => doc.data))
+    });
+  })
+  const [showSidebar, setShowBar] = useState(false)
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='App'>
+        <header>
+          <GiHamburgerMenu onClick={() => setShowBar(!showSidebar)} />
+        </header>
+
+         < Navbar show={showSidebar} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
   )
 }
 

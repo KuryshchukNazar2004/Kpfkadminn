@@ -1,42 +1,66 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+body{
+  margin: 0px;
+}
+header{
+  margin: 0px;
+  padding: 20px;
+  background-color: #281c3f;
+  height: 50px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header svg{
+  color: white;
+  font-size: 40px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar{
+  width: 250px;
+  background:#281c3f ;
+  position: absolute;
+  height: 95vh;
+  left: 0px;
+  padding: 0 20px;
+  transition: all 1s;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sidebar.active{
+  left: -300px;
+  transition: all 1s; 
 }
 
-.card {
-  padding: 2em;
+ ul {
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0px;
 }
 
-.read-the-docs {
-  color: #888;
+li {
+  list-style: none;
+  margin: 10px;
 }
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 5px 20px;
+  display: block;
+}
+
+ ul li a:hover,
+ ul li a.active {
+  background: #47316e;
+  padding: 5px;
+  transition: all 500ms;
+}
+/*
+.sidebar ul li a.active {
+  color: #000;
+}
+.sidebar  {
+  font-weight: bold;
+}*/
