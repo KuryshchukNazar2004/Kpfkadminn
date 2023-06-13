@@ -6,7 +6,7 @@ body{
 header{
   margin: 0px;
   padding: 20px;
-  background-color: #281c3f;
+  background-color: #553492;
   height: 50px;
 }
 
@@ -17,7 +17,7 @@ header svg{
 
 .sidebar{
   width: 250px;
-  background:#281c3f ;
+  background:#553492 ;
   position: absolute;
   height: 95vh;
   left: 0px;

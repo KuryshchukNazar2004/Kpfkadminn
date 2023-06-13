@@ -8,7 +8,7 @@ import { collection, onSnapshot } from '@firebase/firestore';
 
 function App() {
   useEffect(() =>{
-    onSnapshot(collection(db,'user'),(onSnapshot) =>{
+    onSnapshot(collection(db,'groups'),(onSnapshot) =>{
         console.log(onSnapshot.docs.map(doc => doc.data))
     });
   })
