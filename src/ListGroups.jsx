@@ -18,7 +18,7 @@ export default function ListGroups() {
   
   
   function getGroups() {
-    const groupsColletionRef = collection(db, 'abc');
+    const groupsColletionRef = collection(db, '/kpfk/lessons/monday/');
     getDocs(groupsColletionRef)
     .then(response => {
       const gr = response.docs.map(doc => ({data : doc.data(), id : doc.id, }))
@@ -29,9 +29,11 @@ export default function ListGroups() {
 
   return (
     <div>
-      <h4>Groups list</h4>
+      <h4>&emsp;<b>Monday</b></h4>
       <ul>
-        {groups.map(groups => <li key ={groups.id}>{groups.data.Love}</li>)}
+        {groups.map(groups => <li key ={groups.id}><b>&emsp;&emsp;&emsp;&emsp;{groups.id}</b><br></br>
+        1 - {groups.data.subjects[0]}<br></br>2 - {groups.data.subjects[1]}<br></br>3 - {groups.data.subjects[2]}<br></br>
+        4 - {groups.data.subjects[3]}<br></br>5 - {groups.data.subjects[4]}<br></br>6 - {groups.data.subjects[5]}<br></br></li>)}
       </ul>
     </div>
   );
