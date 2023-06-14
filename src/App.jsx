@@ -9,11 +9,12 @@ import {
   getDocs, 
   doc,
   query  } from '@firebase/firestore';
+import ListGroups from './ListGroups';
 
 
 async function queryDoc(){
   const querr = query(
-    collection(db, '/groups')
+    collection(db, '/groups/P-41/Friday')
   );
 
   const querySnapshot = await getDocs(querr);
@@ -39,7 +40,6 @@ async function queryDoc(){
 
 function App() {
   const group = collection(db, `Groups`)
-  const zz =  queryDoc();
   /*onSnapshot(group, onSnapshot => {
     if(onSnapshot.exists()){
       const docData = onSnapshot.data();
@@ -56,6 +56,7 @@ function App() {
           <GiHamburgerMenu onClick={() => setShowBar(!showSidebar)} />
         </header>
          < Navbar show={showSidebar} />
+        <ListGroups />
       </div>
       
   )
