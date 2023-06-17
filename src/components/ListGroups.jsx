@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
+import { subjectCollectionRef } from "../lib/firestore.collection";
 
 
 export default function ListGroups() {
@@ -18,7 +19,9 @@ export default function ListGroups() {
   
   
   function getGroups() {
-    const groupsColletionRef = collection(db, '/kpfk/lessons/monday/');
+    const groupsColletionRef = collection(db, '/kpfk/lessons/monday');
+    // const groupsColletionRef = firebase.firestore().collection('kpfk').doc('lessons').collection('monday').doc('p41');
+
     getDocs(groupsColletionRef)
     .then(response => {
       const gr = response.docs.map(doc => ({data : doc.data(), id : doc.id, }))
