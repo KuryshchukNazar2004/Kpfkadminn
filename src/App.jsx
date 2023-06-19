@@ -10,7 +10,6 @@ import {
   doc,
   query  } from '@firebase/firestore';
 import ListGroups from './components/ListGroups';
-import AddSubjects from './components/AddSubjects';
 import EditSubjects from './components/EditSubjects';
 
 
@@ -49,8 +48,7 @@ function App() {
           <GiHamburgerMenu onClick={() => setShowBar(!showSidebar)} />
         </header>
          < Navbar show={showSidebar} />
-        {/* <ListGroups /> */}
-        <AddSubjects />
+        <ListGroups />
         <EditSubjects/>
       </div>
       
