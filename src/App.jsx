@@ -16,7 +16,7 @@ import EditSubjects from './components/EditSubjects';
 
 async function queryDoc(){
   const querr = query(
-    collection(db, '/groups/P-41/Friday')
+    collection(db, '/kpfk')
   );
 
   const querySnapshot = await getDocs(querr);
@@ -40,27 +40,18 @@ async function queryDoc(){
 
 
 
+
 function App() {
-  const group = collection(db, `Groups`)
-  /*onSnapshot(group, onSnapshot => {
-    if(onSnapshot.exists()){
-      const docData = onSnapshot.data();
-      console.log(`Zalupa  is ${JSON.stringify(docData)}`);
-    }
-  });*/
-
- 
-
-  const [showSidebar, setShowBar] = useState(false)
+  const [showSidebar, setShowBar] = useState(true)
   return (
       <div className='App'>
         <header>
           <GiHamburgerMenu onClick={() => setShowBar(!showSidebar)} />
         </header>
          < Navbar show={showSidebar} />
-        <ListGroups />
+        {/* <ListGroups /> */}
         <AddSubjects />
-        <EditSubjects />
+        <EditSubjects/>
       </div>
       
   )
